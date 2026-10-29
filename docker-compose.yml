@@ -1,0 +1,7 @@
+services:
+  site:
+    build: .
+    container_name: minha-cantina
+    ports:
+      - "127.0.0.1:8081:80"   # só o próprio computador/servidor acessa
+    restart: unless-stopped
