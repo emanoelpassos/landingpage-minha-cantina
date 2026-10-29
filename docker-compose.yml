@@ -1,7 +1,13 @@
 services:
   site:
     build: .
-    container_name: minha-cantina
+    container_name: minha-cantina-landingpage
     ports:
       - "127.0.0.1:8081:80"   # só o próprio computador/servidor acessa
     restart: unless-stopped
+
+
+networks:
+  proxy:
+    external: true                        # rede que já existe, criada pelo Proxy Manager
+    name: nginx-proxy-manager_default     # ⚠️ o nome que apareceu no 4.1
